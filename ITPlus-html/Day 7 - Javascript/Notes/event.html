@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="test">This is the sample string</div>
+  <button>
+    Change
+  </button>
+
+  <button>
+    Second button
+  </button>
+
+  <script>
+    function populateDivTag()
+    {
+      document.getElementById('test').innerText = "Populated content"
+      //put text inside div to have red color
+      document.getElementById('test').style.color = 'red';
+    }
+
+    //closure function() 
+    document.getElementsByTagName("button")[0].addEventListener('click', function() {
+      //code to be executed here after button is clicked
+      let stringLength = document.getElementById('test').innerText // content between tag: "This is the sample string"
+      console.log(stringLength.length)
+      console.log(stringLength[0])
+      // \s: space (Regexp)
+      console.log(stringLength.split(/\s/)[3]) // return [This, is, the, sample, string]
+      console.log(stringLength.split(" ").join(",")) //join array and transform to string, with separator "comma"
+    })
+    //if the button is clicked, then populate ST between div tag.
+
+    let abc = "year";
+    console.log(parseInt(abc)); //NaN ==> Not a number
+
+  </script>
+</body>
+</html>

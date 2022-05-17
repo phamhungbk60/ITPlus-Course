@@ -1,0 +1,20 @@
+a {
+  color: blue;
+  transition: transform 2s;
+}
+
+a:hover {
+  color: red;
+  transform: rotate(180deg);
+}
+
+.change-width {
+  width: 200px;
+  height: 100px;
+  background-color: red;
+  transition: transform 2s ease-out;
+}
+
+.change-width:hover {
+  transform: rotate(180deg);
+}

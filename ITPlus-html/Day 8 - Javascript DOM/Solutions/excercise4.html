@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Tìm giai thừa</h1>
+  <form id="form-group">
+    <div class="form-label">
+      <label>Nhập vào số a:</label>
+    </div>
+
+    <div class="form-input">
+      <input type="text" name="c" id="input-c" required/>
+    </div>
+    <br/>
+    <button type="submit">Tìm giai thừa</button>
+    <div id="result"></div>
+  </form>
+
+  <script>
+    document.querySelector('form').addEventListener('submit', function(e) {
+      e.preventDefault()
+      const inputNumber = parseInt(document.getElementById('input-c').value)
+      let sum = 1;
+      for (i = 1; i <= inputNumber; i++) {
+        sum *= i
+      }
+      document.getElementById('result').innerText = `Giai thừa bằng ${sum}`
+    })
+  </script>
+</body>
+</html>

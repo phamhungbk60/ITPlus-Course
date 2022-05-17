@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- Css -->
+  <!-- <link rel="stylesheet" href="link_to_file_css_here" /> -->
+</head>
+<body>
+  <!-- DOM element -->
+  <div id="mytext"></div>
+
+  <script>
+    let string = "this is a string";
+    console.log(typeof(string)) //typeof() will return datatype of variable.
+
+    let undefinedVariable;
+    console.log(typeof(undefinedVariable)); //undefined: 
+
+    let nullObject = null;
+    console.log(typeof(nullObject)); //null
+
+    let number = 8;
+    console.log(typeof(number)); // number
+
+    let objectLiteral = {
+      car: "Volvo",
+      driver: "camnh"
+    }
+
+    console.log(typeof(objectLiteral)) //object
+    //access value of key: key.name
+    console.log(objectLiteral.car)
+
+    //odd even
+    function checkNumberIsOddOrEven(number)
+    {
+      if (number % 2 == 0) {
+        return "even";
+      }
+      return "odd"
+    }
+
+    console.log(checkNumberIsOddOrEven(7));
+
+  </script>
+</body>
+</html>

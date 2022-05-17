@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <form id="form-input">
+    <!-- a -->
+    <div>
+      <label>Input a: </label>
+      <input type="text" name="number" id="input-a" /> <!-- không được để trống -->
+      <!-- Các error mà validate bị sai sẽ được đẩy ở đây -->
+      <div class="error" id="input-a-error"></div> 
+    </div>
+
+    <!-- b -->
+    <div>
+      <label>Input b: </label>
+      <input type="text" name="number" id="input-b" /> <!-- không được để trống -->
+      <!-- Các error mà validate bị sai sẽ được đẩy ở đây -->
+      <div class="error" id="input-b-error"></div> 
+    </div>
+
+    <!-- Result -->
+    <div id="result"></div>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    document.getElementById('form-input').addEventListener('submit', function(e) {
+      e.preventDefault()
+      let inputANumber = document.getElementById('input-a').value
+      let inputBNumber = document.getElementById('input-b').value
+      let error = false
+
+      //Trước khi làm, đẩy các giá trị trong error là trắng ==> Đẩy error vê trạng thái "trắng"
+      document.getElementById('input-a-error').innerText = ""
+      document.getElementById('input-b-error').innerText = ""
+
+      if (inputANumber == "") {
+        //Ghi thống báo
+        document.getElementById('input-a-error').innerText = "Không được để trống trường này"
+        error = true
+      }
+
+      if (inputBNumber == "") {
+        document.getElementById('input-b-error').innerText = "Không được để trống trường này"
+        error = true
+      }
+
+      //ghi kết quả các trường nhập
+      if (!error) {
+        document.getElementById('result').innerHTML = `
+          <p>Input a: ${inputANumber}</p>
+          <p>Input b: ${inputBNumber}</p>
+        `
+      }
+    })
+  </script>
+</body>
+</html>

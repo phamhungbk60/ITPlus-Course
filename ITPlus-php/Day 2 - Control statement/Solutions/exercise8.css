@@ -1,0 +1,13 @@
+table {
+  border: 1px solid black;
+}
+
+tr td {
+  width: 30px;
+  height: 30px;
+  border: 1px solid black;
+}
+
+.prime {
+  background-color:lightgreen;
+}

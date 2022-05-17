@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+</head>
+<body>
+  <form>
+    <label>n</label>
+    <input type="text" name="number"/>
+    <button type="submit">Calculate</button>
+  </form>
+
+  <div id="result"></div>
+
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+  <script>
+    $(function() {
+      $("form").submit(function(e) {
+        e.preventDefault();
+        let arr = []
+        let limit = parseInt($("input[name='number']").val())
+        for (i = 0; i<= limit; i++) {
+          if (i % 2 == 0 && i % 5 == 0) {
+            arr.push(i);
+          }
+        }
+
+        $("#result").text(arr.join(','))
+      })
+    });
+
+    console.log("13"+"24");
+  </script>
+</body>
+</html>

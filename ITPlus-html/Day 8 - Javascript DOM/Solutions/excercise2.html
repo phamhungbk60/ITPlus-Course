@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Giải x với phương trình bậc 1: aX + b = 0</h1>
+  <form id="form-group">
+    <div class="form-label">
+      <label>Nhập vào số a:</label>
+    </div>
+    <div class="form-input">
+      <input type="text" name="a" id="input-a" required/>
+    </div>
+    <br/>
+    <div class="form-label">
+      <label>Nhập vào số b:</label>
+    </div>
+    <div class="form-input">
+      <input type="text" name="a" id="input-b" required/>
+    </div>
+    <br/>
+    <button type="submit">Tìm x</button>
+
+    <div id="error"></div>
+    <div id="result"></div>
+  </form>
+  
+  <script src="./helper.js"></script>
+  <script>
+    document.querySelector('form').addEventListener('submit', function(e) {
+      e.preventDefault()
+      const errorElement = document.getElementById("error")
+      const resultElement = document.getElementById("result")
+      const numberA = document.getElementById("input-a").value
+      const numberB = document.getElementById("input-b").value
+
+      const numberAAsInt = parseInt(numberA)
+      const numberBAsInt = parseInt(numberB)
+
+      errorElement.innerText = ""
+      resultElement.innerText = ""
+      if (inputIsBlank(numberA) || inputIsBlank(numberB)) {
+        errorElement.innerText = "Số không được để trống"
+        return;
+      }
+
+      if (inputIsText(numberAAsInt) || inputIsText(numberBAsInt)) {
+        errorElement.innerText = "Không phải là số"
+        return;
+      }
+
+      
+      result.innerText = -numberBAsInt / numberAAsInt
+
+    })
+  </script>
+</body>
+</html>

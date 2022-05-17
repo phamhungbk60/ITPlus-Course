@@ -1,0 +1,80 @@
+body {
+  background-repeat: repeat;
+  background: url('../materials/bg.gif');
+  font-family: Verdana, sans-serif;
+}
+
+h1 {
+  color: red;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h2 {
+  color: white;
+  font-family: 'Courier New', Courier, monospace
+}
+
+nav {
+  width: 75%;
+  background-color: pink;
+  margin: auto;
+  padding: 15px;
+  border: 1px #000 solid;
+}
+
+nav ul {
+  list-style-type: none;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  border: 1px solid #000;
+  padding: 5px;
+  margin: 5px;
+  background-color: yellow;
+}
+
+nav ul li a:hover {
+  background-color: purple;
+  color: pink;
+  text-decoration: none;
+}
+
+/* PROMOTE */
+.promote {
+  text-align: center;
+  background-color: yellow;
+  border: 1px dotted #000;
+}
+
+/* Main section */
+#mainsection {
+  width: 50%;
+  margin: 15px auto;
+  background-color: cornsilk;
+  border: 3px dotted #000;
+  padding: 15px;
+}
+
+#mainsection p.deadline {
+  text-align: center;
+}
+
+footer {
+  width: 200px;
+  padding: 15px;
+  border: 1px solid #000;
+  border-radius: 15px;
+  background-color: #0ff;
+  text-align: center;
+}
+
+footer p {
+  font-style: italic;
+  font-family: 'Times New Roman', Times, serif;
+  margin: 0;
+}

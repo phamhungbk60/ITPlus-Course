@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+  <style>
+    #todo-app {
+    margin: 1em;
+    text-align: center;
+    }
+
+    #todo-list,
+    #todo-stats {
+      margin: 1em auto;
+      text-align: left;
+      width: 450px;
+    }
+
+    #todo-list {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .todo-item {
+      border-bottom: 1px dotted #cfcfcf;
+      font-size: 20px;
+      padding: 6px;
+    }
+
+    .todo-input {
+      display: block;
+      font-family: Helvetica, sans-serif;
+      font-size: 20px;
+      line-height: normal;
+      margin: 5px auto 0;
+      padding: 6px;
+      width: 420px;
+    }
+
+    .todo-clear {
+      float: right;
+      display: none;
+    }
+
+    .clear-all {
+      float: right;
+    }
+
+    .error {
+      font-size: 20px;
+      color: red;
+    }
+
+    /* .active {
+      display: block;
+    } */
+
+  </style>
+</head>
+<body>
+  <div id="todo-app">
+    <div>
+      <label class="todo-label" for="new-todo">What do you want to do today?</label>
+    </div>
+    <input type="text" id="new-todo" class="todo-input" placeholder="buy milk">
+    <!-- Show error on textbox if exist -->
+    <div class="error"></div>
+    <ul id="todo-list"></ul>
+    <!-- Items left -->
+    <div id="todo-stats">
+      
+    </div>
+    <!-- Clear all -->
+  </div>
+
+  <script src="../Materials/jquery-2.2.4.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      let tasksLeft = 0
+
+      $("#new-todo").on('keyup',function(e) {
+        $(".error").text("")
+        const todoValue = $(this).val()
+        //Press Enter key = 13
+          if (e.which === 13) { 
+            if (todoValue.trim().length !== 0) {
+              $("#todo-list").append(`
+                <li class="todo-item">${todoValue}
+                  <i class="far fa-trash-alt todo-clear"></i>
+                </li>
+              `)
+              //reset value to empty, clear error message
+              $(this).val("")
+              $(".error").text("")
+              tasksLeft++
+              $("#todo-stats").html(writeTaskLeft(tasksLeft))
+            } else {
+              $(".error").text("Không được để trống")
+            } 
+          }
+      })
+
+      //clear to do item
+      $(document).on('click', '.todo-clear', function(e) {
+        $(this).parent('li').remove()
+        tasksLeft--
+        $("#todo-stats").html(writeTaskLeft(tasksLeft))
+      })
+
+      // Clear all
+      $(document).on('click', 'button.clear-all', function() {
+        $("#todo-list li").remove()
+        tasksLeft = 0
+        $("#todo-stats").html(writeTaskLeft(tasksLeft))
+      })
+
+      // show trash bin on hover
+      $(document).on('mouseenter', 'li.todo-item', function() {
+        $(this).find('i').fadeIn(150)
+      })
+
+      // remove trashbin on mouse out
+      $(document).on('mouseleave', 'li.todo-item', function() {
+        $(this).find('i').fadeOut(150)
+      })
+    })
+
+    //Write tasks left to screen
+    function writeTaskLeft(number) {
+      if (number == 1) {
+        return `
+                <span class="task-remaining">${number}</span>
+                <span class="task-remaining-label"> task left</span>
+                <button class="clear-all">Clear All</button>
+                `
+      }
+
+      if (number == 0) {
+        return ""
+      }
+
+      return `
+              <span class="task-remaining">${number}</span>
+              <span class="task-remaining-label"> tasks left</span>
+              <button class="clear-all">Clear All</button>
+            `
+    }
+    
+  </script>
+</body>
+</html>

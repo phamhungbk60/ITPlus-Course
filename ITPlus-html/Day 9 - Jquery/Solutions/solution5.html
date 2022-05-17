@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solution 5</title>
+  <link rel="stylesheet" href="./reset.css" />
+  <link rel="stylesheet" href="./solution5.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+</head>
+<body>
+  <div id="container">
+    <nav>
+      <h1>Brand logo</h1>
+      <!-- Dropdown -->
+      <ul>
+        <!--  -->
+        <li>
+          <a href="#">
+            <i class="fas fa-tachometer-alt"></i>
+            Dashboard
+          </a>
+        </li>
+        <!--  -->
+        <li>
+          <a href="#">
+            <i class="fas fa-tachometer-alt"></i>
+            Dashboard
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fas fa-tachometer-alt"></i>
+            Dashboard
+          </a>
+        </li>
+        <li class="has-caret">
+          <a href="#">
+            <span>
+              <i class="fas fa-tachometer-alt"></i>
+              Dashboard
+            </span>          
+            <span><i class="fas fa-angle-down"></i></span>
+            <div class="clearfix"></div>
+          </a>
+
+          <!-- submenu -->
+          <ul class="submenu hidden">
+            <li>
+              <a href="#">
+                <i class="fas fa-angle-right"></i>
+                asdasd
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fas fa-angle-right"></i>
+                asdasd
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fas fa-angle-right"></i>
+                asdasd
+              </a>
+            </li>
+          </ul>
+        </li>
+        <!--  -->
+        <li>
+          <a href="#">
+            <i class="fas fa-tachometer-alt"></i>
+            Dashboard
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="content">
+      <h2>Content</h2>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+
+  <!-- Script -->
+  <script src="../Materials/jquery-2.2.4.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $(".has-caret").click(function() {
+        $(this).find('ul').slideToggle(300)
+      })
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var sample = "Robin Singh";
+    var lettersToCut = 4;
+    var stringAfterCut = "";
+
+    for (i = 0; i < sample.length ; i++) {
+      if (i > lettersToCut - 1) {
+        break;
+      }
+      stringAfterCut += sample[i]
+    }
+
+    document.write(stringAfterCut)
+  </script>
+</body>
+</html>

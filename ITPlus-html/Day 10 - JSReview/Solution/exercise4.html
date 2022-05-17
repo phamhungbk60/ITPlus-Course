@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <select name="images">
+    <option value="https://homepages.cae.wisc.edu/~ece533/images/airplane.png" selected>Image 1</option>
+    <option value="https://homepages.cae.wisc.edu/~ece533/images/arctichare.png">Image 2</option>
+    <option value="https://homepages.cae.wisc.edu/~ece533/images/baboon.png">Image 3</option>
+  </select>
+  
+  <div>
+    
+  </div>
+  <script src="../Materials/jquery-2.2.4.min.js"></script>
+  <script>
+    $(function() {
+      setImageBasedOnSelect()
+
+      $("select").change(function() {
+        setImageBasedOnSelect()
+      })
+    })
+
+    function setImageBasedOnSelect() {
+      const imageSrc = $("[name='images']").val()
+      
+      $("div").html('<img src="'+imageSrc+'" />');
+    }
+    // 
+  </script>
+</body>
+</html>

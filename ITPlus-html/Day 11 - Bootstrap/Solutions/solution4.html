@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../Materials/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./solution4.css" />
+</head>
+<body>
+  <div class="container-fluid">
+    <!-- Nav -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="#">Features</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+          </div>
+        </div>
+
+        <!-- Inline form -->
+        <form class="form-inline" id="sign-in">
+          <div class="form-group mr-2">
+            <input type="text" class="form-control" id="inlineFormInputName2" placeholder="Email">
+          </div>
+          <div class="form-group mr-2">
+            <input type="text" class="form-control" id="inlineFormInputName2" placeholder="Password">
+          </div>
+          <button class="btn btn-success">Sign in</button>
+        </form>
+      </div>
+    </nav>
+
+    <!-- Jumbotron -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1 class="display-4">Hello, world!</h1>
+        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+          Itaque deleniti quod ratione perspiciatis molestias minus id, velit, 
+          onsectetur voluptatibus et obcaecati hic magnam alias, cumque autem. 
+          Hic quis ipsum harum.</p>
+        <a class="btn btn-primary btn-lg" href="#" role="button" data-toggle="modal" data-target="#learnMoreModal">Learn more</a>
+        <!-- Modal box -->
+        <div class="modal fade" id="learnMoreModal" tabindex="-1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Sample modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus nihil repellendus cumque fugiat optio qui facilis ipsam! 
+                Eius nostrum sed aliquam, quis unde error molestiae magnam, doloremque aut aliquid accusantium!
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+      <div class="container">
+        <!-- Dismissable alert -->
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="row">
+          <div class="col-lg-4">
+            <h1>Heading</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+              Fuga voluptatibus eos illum sunt voluptate assumenda magni quibusdam. 
+              Impedit, aliquid? Voluptatum doloremque repellendus ut at laborum architecto explicabo facere ad. Quisquam!</p>
+            <button class="btn btn-light"><i class="far fa-thumbs-up"></i> View details</button>
+          </div>
+
+          <div class="col-lg-4">
+            <h1>Heading</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+              Fuga voluptatibus eos illum sunt voluptate assumenda magni quibusdam. 
+              Impedit, aliquid? Voluptatum doloremque repellendus ut at laborum architecto explicabo facere ad. Quisquam!</p>
+            <button class="btn btn-light"><i class="fas fa-mobile-alt"></i> View details</button>
+          </div>
+
+          <div class="col-lg-4">
+            <h1>Heading <span class="badge badge-primary">New</span></h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+              Fuga voluptatibus eos illum sunt voluptate assumenda magni quibusdam. 
+              Impedit, aliquid? Voluptatum doloremque repellendus ut at laborum architecto explicabo facere ad. Quisquam!</p>
+              <button class="btn btn-light" data-toggle="modal" data-target="#viewDetail"><i class="fas fa-map-marker-alt"></i> View details</button>
+              <div class="modal fade" id="viewDetail" tabindex="-1">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Contact Us</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form method="POST">
+                        <div class="form-group">
+                          <label for="name">Guest name</label>
+                          <input type="email" id="name" class="form-control"/>
+                        </div>
+                        <div class="form-group">
+                          <label for="feedback">Feedback</label>
+                          <textarea class="form-control" rows="5"></textarea>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Send</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../Materials/jquery-3.5.1.slim.min.js"></script>
+  <script src="../Materials/bootstrap.bundle.min.js"></script>
+</body>
+</html>

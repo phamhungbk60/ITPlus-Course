@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    /* .left {
+      float: left;
+    }
+
+    .right {
+      float: right;
+    }
+
+    .clearfix {
+      clear: both;
+    } */
+    .heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .image {
+      order: 3;
+      flex-grow: 3;
+      display: flex;
+      align-items: center;
+    }
+
+    .heading .handsome {
+      order: 1;
+      flex-grow: 2;
+    }
+
+    .right {
+      order: 0;
+      flex-grow: 1;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container"> 
+      <!-- Flex container -->
+      <div class="heading">
+        <!-- Flex item -->
+        <div class="image">
+          <img src="https://themes.getbootstrap.com/wp-content/themes/bootstrap-marketplace/assets/images/elements/bootstrap-stack.png" />       
+          <p>I'm left</p>
+        </div>
+
+        <div class="handsome">Camnh dz vai noi</div>
+        
+        <!-- Flex item -->
+        <div class="right">
+          I'm right
+        </div>
+      </div>
+      nklhjk
+    </div>
+    <p>Helu</p>
+  </header>
+  
+</body>
+</html>

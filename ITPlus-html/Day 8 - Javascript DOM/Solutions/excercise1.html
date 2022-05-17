@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form id="form-group">
+    <div class="form-label center">
+      <label>Nhập vào số a:</label>
+    </div>
+    <div class="form-input">
+      <input type="text" name="a" id="input" required/>
+    </div>
+    <button type="submit">Check</button>
+    <div id="error"></div>
+    <div id="result"></div>
+  </form>
+
+  <script>    
+    document.querySelector('form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const errorElement = document.getElementById("error")
+      const numberInputText = document.getElementById("input").value
+      const numberInputAsInt = parseInt(numberInputText)
+      if (numberInputText.trim().length === 0) {
+        errorElement.innerText = "Số không được để trống"
+        return;
+      }
+
+      if (Number.isNaN(numberInputAsInt)) {
+        errorElement.innerText = "Không phải là số"
+        return ;
+      }
+
+      errorElement.innerText = ""
+      if (numberInputAsInt < 10 && numberInputAsInt > 1 || numberInputAsInt > 50 && numberInputAsInt < 100) {
+        result.innerText = `Số ${numberInputAsInt} nằm trong khoảng [1,10] và [50,100]`
+      }
+      else {
+        result.innerText = `Số ${numberInputAsInt} không nằm trong khoảng [1,10] và [50,100]`
+      }
+
+    });
+  </script>
+</body>
+</html>

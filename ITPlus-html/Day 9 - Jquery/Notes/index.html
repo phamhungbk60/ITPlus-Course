@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button>Click me</button> 
+
+  <button>Click another me</button>
+
+  <p>Animate me</p>
+
+  <button id="hide-input">Hide input</button>(*) to get here
+
+  <button id="show-input">Show input</button>
+
+  <button id="perform-animation">Animate p tag</button> 
+
+  <input type="text" value="Default value" data-price="30"/>
+
+  <!--  -->
+  <button id="add-to-list">Add to list</button>
+
+  <ul id="append-list">
+
+  </ul>
+
+  <div id="parent-element"> 
+    <div>
+      <div>
+        <ul id="demo-parent">
+          <li>First</li>
+          <li>Second</li>
+          <li>Third</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <ul id="prepend-list">
+
+  </ul>
+
+  <script>
+    // The thing you write to put text inside html tag
+    // document.getElementsByTagName('p')[0].innerText = "Sample text"; ==> Pure Javascript
+    document.getElementsByTagName('p')[0]; //point to the node ==> write text betwwen <p> and </p>
+  </script>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+  <script>
+    // Javascript ==> task: raise alert onto the screen
+    // document.querySelectorAll().addEventListener('click', function() {
+    //   alert('Hello there');
+    // });
+
+    //CSS: key, value = css(key, value)
+    // CSS: css({
+    // key: value,
+    // key2: value2
+    //})
+    $("p").css({
+      color: 'red',
+      fontSize: '34px'
+    });
+
+
+    $("#add-to-list").click(function() {
+      $("ul#append-list").append("<li>"+$("input").val()+"</li>");
+      $("ul#prepend-list").prepend("<li>"+$("input").val()+"</li>");
+      $("ul#append-list").after("<p>"+$("input").val()+"</p>");
+      $("ul#append-list").before("<p>"+$("input").val()+"</p>");
+    });
+
+    //Guess?? 
+    // console.log($("#demo-parent li").parents("#parent-element").next().append('<li>Hello boy</li>'));
+    console.log($("#parent-element").siblings('#hide-input').text());
+
+    
+    $(function() {
+      $("#perform-animation").click(function() {
+        console.log($("input").val("asdas"));
+        console.log($("input").attr('value'));
+        console.log($("input").data('price') * 4);
+      });
+
+      $("button").dblclick(function() {
+        //Task: alert to the screen the text between button.
+        console.log($(this).text());
+      });
+
+      $("#hide-input").click(function() {
+        $("input").slideUp(); //hide() is similar to fadeOut()
+      });
+
+      $("#show-input").click(function() {
+        $("input").slideDown();
+      });
+
+      $("input").keyup(function(e) {
+        //e: event
+        //specify "enter button"
+        console.log(e.which);
+
+        if (e.which === 13) {
+          //gửi form
+        }
+      });
+    });
+
+  </script>
+</body>
+</html>

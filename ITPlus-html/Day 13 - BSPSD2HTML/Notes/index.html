@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .red {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div id="sample"></div>
+  <div id="sample-html"></div>
+  <p class="recycle">asdasdad</p>
+  <!-- Form -->
+  <input type="text" id="test" />
+  <div class="error"></div>
+  <div class="result"></div>
+  <button id="btn">Get value</button>
+
+  <!-- Library -->
+  <script src="../Materials/jquery-2.2.4.min.js"></script>
+  <script>
+    $(function() {
+      $("#sample").text("Hello there")
+      $("#sample-html").html("<p class='red'>This is p</p>")
+      $("#sample-html").css("color", "red")
+
+      $("#btn").click(function() {
+        $(".error").text("")
+        if ($("#test").val().trim().length == 0) {
+          $(".error").text("Không được để trống")
+          return;
+        }
+
+        let regex = /^0[1-9]{8}$/
+        if (regex.test($("#test").val()) === false) {
+          $(".error").text("Không hợp lệ");
+          return;
+        }
+
+        $(".result").text($("#test").val())
+        //ghi ra console từng chữ cái 1 trong input
+        for (i = 0; i < $("#test").val().length; i++) {
+          console.log($("#test").val()[i])
+        }
+      });
+
+      $(".recycle").mouseenter(function() {
+        $(this).hide()
+      });
+
+      $(".recycle").mouseleave(function() {
+        $(this).show()
+      });
+
+    });
+  </script>
+</body>
+</html>

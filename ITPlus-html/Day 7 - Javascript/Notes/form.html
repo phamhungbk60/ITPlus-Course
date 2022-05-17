@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  span {
+    color:red;
+  }
+</style>
+<body>
+  <form>
+    <!-- Username -->
+    <div>
+      <label for="username">Username</label>
+      <input type="text" name="username" id="username" /><br/>
+      <span></span>
+    </div>
+    <!-- Password -->
+    <div>
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" /><br/>
+      <span></span>
+    </div>
+
+    <button>Validate form</button>
+  </form>
+
+  <!-- Q: If I click in validate form: username must be required and password must be required. If
+  one of 2 fields is empty, so write error message below the input tag-->
+  <script>
+    // 1st: capture form submit here
+    document.getElementsByTagName("form")[0].addEventListener('submit', function(e) {
+      //e : synthetic event
+      e.preventDefault(); //this will block browser from refresh the page.
+      // capture input of username
+      let username = document.getElementById("username").value
+      // capture input password
+      let password = document.getElementById('password').value
+
+      //reset error to basic form
+      document.getElementsByTagName('span')[0].innerText = "" //Xoá lỗi
+      document.getElementsByTagName('span')[1].innerText = "" //Xoá lỗi
+
+      if (username === "") {
+        //write required message into first span tag
+        document.getElementsByTagName('span')[0].innerText = "Username must not be null"
+      }
+
+      if (password === "") {
+        document.getElementsByTagName('span')[1].innerText = "Password must not be null"
+      }
+      
+    });
+  </script>
+</body>
+</html>

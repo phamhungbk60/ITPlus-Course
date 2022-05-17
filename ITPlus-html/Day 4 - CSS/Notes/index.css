@@ -1,0 +1,27 @@
+/* Lựa chọn thẻ h1, và đặt màu đỏ cho nó */
+h1 {
+  color: #ff0000;
+}
+
+h1 {
+  color: green;
+}
+
+/* Lựa chọn h1 có id là heading */
+h1#another {
+  color: black;
+}
+
+
+h2 {
+  color: green;
+}
+
+/* Lựa chọn h2 nhưng có class là first */
+h2.first {
+  color: orange;
+}
+
+h2.second {
+  color: purple;
+}

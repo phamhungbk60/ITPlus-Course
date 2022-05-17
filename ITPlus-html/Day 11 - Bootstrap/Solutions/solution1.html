@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../Materials/bootstrap.min.css"/>
+</head>
+<body>
+  <div class="container">
+    <form method="POST">
+      <div class="form-group">
+        <label for="first_name">First name</label>
+        <input type="text" class="form-control" id="first_name">
+        <div class="invalid-feedback d-none">
+          Trường không được để trống
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="last_name">Last name</label>
+        <input type="text" class="form-control" id="last_name" />
+        <div class="invalid-feedback d-none">
+          Trường không được để trống
+        </div>
+      </div>
+      <!-- Gender: Male -->
+      <div class="form-group">
+        <div class="form-check-inline">
+          <input type="radio" name="gender" class="form-check-input" id="male" checked="true" value="male">
+          <label class="form-check-label" for="male">Male</label>
+        </div>
+        <!-- Gender:Female -->
+        <div class="form-check-inline">
+          <input type="radio" name="gender" class="form-check-input" id="female" value="female">
+          <label class="form-check-label" for="female">Female</label>
+        </div>
+      </div>
+      <!-- DOB -->
+      <div class="form-group">
+        <input type="date" name="dob" id="dob" class="form-control" placeholder="dd/mm/yyyy"/>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <!-- Result -->
+    <div id="result">
+      <p>First name:<span class="first_name"></span></p>
+      <p>Last name:<span class="last_name"></span></p>
+      <p>Gender:<span class="gender"></span></p>
+      <p>Dob:<span class="dob"></span></p>
+    </div>
+  </div>
+
+  <script src="../Materials/jquery-3.5.1.slim.min.js"></script>
+  <script src="../Materials/bootstrap.bundle.min.js"></script>
+  <script>
+    $(document).ready(function() {
+
+      $("#result").addClass('d-none')
+
+      $("button").click(function(e) {
+        let hasError = false
+        e.preventDefault()
+        const firstName = $("#first_name")
+        const lastName = $("#last_name")
+        const gender = $("input[name='gender']:checked")
+        const dob = $("#dob")
+        const result = $("#result")
+        $("#result").addClass('d-none')
+        firstName.removeClass('is-invalid').next().addClass('d-none')
+        lastName.removeClass('is-invalid').next().addClass('d-none')
+
+        if (firstName.val().trim().length == 0) {
+          firstName.addClass('is-invalid').next().removeClass('d-none')
+          hasError = true
+        }
+        if (lastName.val().trim().length == 0) {
+          lastName.addClass('is-invalid').next().removeClass('d-none')
+          hasError = true
+        }
+
+        //write result to screen
+        if (!hasError) {
+          $("#result").removeClass('d-none')
+          $("span.first_name").text(firstName.val())
+          $("span.last_name").text(lastName.val())
+          $("span.gender").text(gender.val())
+          $("span.dob").text(dob.val())
+        }
+      })
+    })
+  </script>
+</body>
+</html>

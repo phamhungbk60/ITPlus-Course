@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    p {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div id="result">
+    <h2 id="full_name"></h2>
+  </div>
+
+  <button>Insert into db</button>
+  <script src="../../Materials/jquery-2.2.4.min.js"></script>
+  <script>
+    $(function() {
+      $("button").click(function() {
+        $.ajax({
+          //url: Khi bạn gửi request thì gửi tới đâu
+          url: 'indexPost.php',
+          method: 'POST',
+          data: {first_name: 'camnh', last_name: 'nhcam'},
+        }).done(function(result) {
+          //result: camnh-nhcam
+          alert('thanh cong roi')
+        }).fail(function(result) {
+          // console.error(result)
+        }); 
+      })
+    });
+  </script>
+</body>
+</html>

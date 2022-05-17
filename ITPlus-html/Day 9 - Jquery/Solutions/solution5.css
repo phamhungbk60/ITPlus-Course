@@ -1,0 +1,52 @@
+html, 
+body {
+    height: 100%;
+    margin: 0;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.hidden {
+  display: none;
+}
+
+#container {
+  height: 100%;
+}
+
+nav {
+  width: 20%;
+  float: left;
+  background-color: rgb(46,53,61);
+  height: 100%;
+}
+
+h1 {
+  background-color: rgb(30,35,46);
+  margin: 0;
+  padding: 12px 0;
+  text-align: center;
+  color: white;
+}
+
+li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 12px 12px;
+  border-bottom: 1px solid rgb(30,35,46);
+}
+
+li.has-caret > a > span:first-child {
+  float: left;
+}
+
+li.has-caret > a > span:nth-child(2) {
+  float: right;
+}
+
+.submenu {
+  background-color: rgb(25, 28, 32);
+}

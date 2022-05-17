@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form id="form-group">
+    <!-- Name -->
+    <div class="form-group">
+      <div class="form-label">
+        <label>Name:</label>
+      </div>
+
+      <div class="form-input">
+        <input type="text" name="name" required id="name"/>
+      </div>
+
+      <div class="error" name="error-name"></div>
+    </div>
+
+    <!-- Email -->
+    <div class="form-group">
+      <div class="form-label">
+        <label>Email:</label>
+      </div>
+
+      <div class="form-input">
+        <input type="text" name="email" required id="email"/>
+      </div>
+      <div class="error" name="error-email"></div>
+    </div>
+
+    <!-- Country -->
+    <div class="form-group">
+      <div class="form-label">Country:</div>
+      <div class="form-input">
+        <select id="country">
+          <option value="-1">-- Select Country --</option>
+          <option value="1">Vietnam</option>
+          <option value="2">Japan</option>
+          <option value="3">USA</option>
+        </select>
+      </div>
+      <div class="error" name="error-country"></div>
+    </div>
+
+    <br/>
+    <button type="submit">Send info</button>
+    <div id="result"></div>
+  </form>
+  <script src="./helper.js"></script>
+  <script>
+    document.querySelector('button').addEventListener('click', function(e) {
+      e.preventDefault()
+      const name = document.getElementById('name').value
+      const email = document.getElementById('email').value
+      const selectedCountry = document.getElementById('country')
+      const regex = /^([a-zA-Z0-9](\.|_)?)+[a-zA-Z0-9]\@[a-zA-Z0-9]+(\.?[a-zA-Z0-9]{2})(\.[a-z]{2,3})$/
+      let hasError = false
+      
+      document.getElementsByName('error-name')[0].innerText = ""
+      document.getElementsByName('error-email')[0].innerText = ""
+      document.getElementsByName('error-country')[0].innerText = ""
+      document.getElementById('result').innerHTML = ""
+
+      if (inputIsBlank(name)) {
+        document.getElementsByName('error-name')[0].innerText = "Name không được để trống"
+        document.getElementById('name').focus()
+        hasError = true
+      }
+
+      if (inputIsBlank(email)) {
+        document.getElementsByName('error-email')[0].innerText = "Email không được để trống"
+        document.getElementById('email').focus()
+        hasError = true
+      }
+
+      if (selectedCountry.value === "-1") {
+        document.getElementsByName('error-country')[0].innerText = "Country không được để trống"
+        document.getElementById('country').focus()
+        hasError = true
+      }
+
+      if (!regex.test(email)) {
+        document.getElementsByName('error-email')[0].innerText = "Email không đúng định dạng"
+        hasError = true
+      }
+
+      if (!hasError) {
+        document.getElementById('result').innerHTML = `
+        Name: ${name} <br/>
+        Email: ${email} <br/>
+        Country: ${selectedCountry[selectedCountry.selectedIndex].text}
+        `
+      }
+      
+    })
+  </script>
+</body>
+</html>

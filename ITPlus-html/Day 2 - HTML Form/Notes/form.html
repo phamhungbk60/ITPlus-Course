@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form>
+    <!-- Trang dòng 11 = trang dòng 12 -->
+    <div>
+      <label for="trang">Mật khẩu cũ</label>
+      <input type="text" id="trang"/>
+    </div>
+    <!-- Mật khảu mới -->
+    <div>
+      <label for="new_password">Mật khẩu mới</label>
+      <input type="password" id="new_password"/>
+    </div>
+    <!-- Nhập lại mk -->
+    <div>
+      <label for="gender">Giới tính</label>
+      <input type="radio" id="gender" name="gender"/>Nam
+      <input type="radio" id="gender" name="gender"/>Nữ
+    </div>
+
+    <!-- Sở thích -->
+    <div>
+      <label for="hobbies">Sở thích</label>
+      <input type="checkbox" name="hobby[]"/>Bơi lội
+      <input type="checkbox" name="hobby[]"/>Bida
+      <input type="checkbox" name="hobby[]"/>PES
+      <input type="checkbox" name="hobby[]"/>Tinder
+    </div>
+    <!-- Select -->
+    <div>
+      <label>Quốc gia</label>
+      <select>
+        <option>Việt Nam</option>
+        <option>Mĩ</option>
+        <option>Lào</option>
+      </select>
+    </div>
+
+    <!-- Button -->
+    <button type="button">Lưu</button>
+    <button type="submit">Lưu</button>
+  </form>
+</body>
+</html>

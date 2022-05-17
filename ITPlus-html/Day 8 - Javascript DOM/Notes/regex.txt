@@ -1,0 +1,1 @@
+Email: https://mkyong.com/regular-expressions/how-to-validate-email-address-with-regular-expression/

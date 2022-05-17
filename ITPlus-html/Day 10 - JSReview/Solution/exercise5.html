@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="checkbox" name="check-all"> Check all
+  <div>
+    <input type="checkbox" name="item[]"/> Item1
+  </div>
+  <div>
+    <input type="checkbox" name="item[]"/> Item2
+  </div>
+  <div>
+    <input type="checkbox" name="item[]"/> Item3
+  </div>
+  <div>
+    <input type="checkbox" name="item[]"/> Item4
+  </div>
+
+  <script src="../Materials/jquery-2.2.4.min.js"></script>
+  <script>
+    $(function() {
+      $("input[name='check-all']").change(function() {
+        $("input[type='checkbox'][name='item[]']").prop('checked', $(this).prop('checked'))  
+      });
+    })
+  </script>
+</body>
+</html>

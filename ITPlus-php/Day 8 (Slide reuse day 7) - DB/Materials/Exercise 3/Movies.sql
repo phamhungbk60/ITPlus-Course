@@ -1,0 +1,1 @@
+INSERT INTO `Movies` VALUES ('1', 'Citizen Kane', 'PG'), ('2', 'Singin\' in the Rain', 'G'), ('3', 'The Wizard of Oz', 'G'), ('4', 'The Quiet Man', null), ('5', 'North by Northwest', null), ('6', 'The Last Tango in Paris', 'NC-17'), ('7', 'Some Like it Hot', 'PG-13'), ('8', 'A Night at the Opera', null), ('9', 'Citizen King', 'G');

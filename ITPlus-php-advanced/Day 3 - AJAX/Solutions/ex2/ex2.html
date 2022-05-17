@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../Materials/bootstrap.min.css" />
+</head>
+<body>
+    <div class="container">
+        <form>
+            <label>Enter input: </label>
+            <input type="text" name="input" class="form-control"/>
+        </form>
+
+        <button id="ajax-button" type="button" class="btn btn-primary">Update content with Ajax</button>
+
+        <div id="result"></div>
+    </div>
+
+    <script src="../../Materials/jquery-2.2.4.min.js"></script>
+    <script>
+        $(function() {
+            $("button").click(function() {
+                $.ajax({
+                    url: 'new-content.php',
+                    method: 'POST',
+                    data: {
+                        input: $("input").val()
+                    },
+                    success: function(res) {
+                        $("#result").text(res)
+                    },
+                    error: function(err) {
+                        console.error(err)
+                    }
+                })
+            })
+            
+        })
+    </script>
+</body>
+</html>

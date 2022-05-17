@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var searchString = "JavaScript function to find a wordz within a string"
+    var needle = "word"
+    var needleIndex = 0;
+    var contained = false;
+
+    for(i = 0; i < searchString.length; i++) {
+      if (needleIndex < needle.length) {
+        if (searchString[i] === needle[needleIndex]) {
+          needleIndex++;
+          contained = true;
+        }
+        else {
+          contained = false;
+        }
+      } else {
+        break;
+      }
+    }
+
+    if (contained == true) {
+      alert('has')
+    }
+  </script>
+</body>
+</html>

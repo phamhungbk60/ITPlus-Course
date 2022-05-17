@@ -1,0 +1,83 @@
+@font-face {
+  src: url('../assets/fonts/inconsolata/Inconsolata-Regular.ttf');
+  font-family: 'Inconsolata Regular'
+}
+
+@font-face {
+  src: url('../assets/fonts/playfair-display/PlayfairDisplay-Regular.ttf');
+  font-family: 'PlayfairDisplay Regular'
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.container-content {
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Header */
+
+.uppercase {
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 70px 0 74px 0;
+}
+
+.logo h1 {
+  font-family: 'Inconsolata Regular';
+  font-size: 30pt;
+}
+
+.logo h1 a {
+  color: black;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 97px;
+}
+
+nav ul li a {
+  font-family: 'PlayfairDisplay Regular';
+  font-size: 14pt;
+  color: #626262;
+}
+
+/* Newsletter */
+section#newsletter {
+  padding: 50px 0;
+  background-color: #f0f0f0;
+  text-align: center;
+}
+
+input {
+  padding: 14px 3px;
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+  background-color: transparent;
+  background: url('../assets/images/send.png');
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+
+input::placeholder {
+  color: #9b9b9b;
+}
+
+a.icon {
+  font-size: 40px;
+  color: red;
+}

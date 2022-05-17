@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Excercise 2 solution</title>
+</head>
+
+<body>
+  <form id="orderForm">
+    <h1 style="color: purple">A Simple Form</h1>
+
+    <h2 style="color: #FF4E5D">Form fundamental</h2>
+
+    <fieldset>
+      <legend> Customer Info </legend>
+      <p>
+        <label for="fullname">Name:</label>
+        <input id="fullname" name="name" type="text" placeholder="Enter your name" size="50">    
+      </p>
+      <p>
+        <label for="tel">Telephone:</label>
+        <input id="tel" name="telephone" type="tel" required size="50" placeholder="Pattern: 1-234-567-8910">
+      </p>
+      <p>
+        <label for="email">E-mail address:</label>
+        <input id="email" name="email" type="email" placeholder="Enter your email address" required size="50">      
+      </p>
+      <p>
+        <label>Gender: </label>
+        <input type="radio" name="gender" id="male" value="male" />
+        <label for="male">Male</label>
+        <input type="radio" name="gender" id="female" value="female" />
+        <label for="female">Female</label>
+      </p>
+      <p>
+        <label>Hobbies:</label>
+        <input type="checkbox" name="hobby[]" value="basketball" id="basketball" />
+        <label for="basketball">Basketball</label>
+        <input type="checkbox" name="hobby[]" value="football" id="football" />
+        <label for="football">Football</label>
+        <input type="checkbox" name="hobby[]" value="badminton" id="badminton" />
+        <label for="badminton">Badminton</label>
+      </p>
+    </fieldset>
+    <fieldset>
+      <legend> Books </legend>
+      <p>
+        <label for="book_name"> Name:</label>
+        <input type="text" name="productlist" size="45" id="book_name">
+        
+        <label for="form_number">Quantity (Maximum 5): </label>
+        <input name="form_number" id="form_number" type="number" min="1" max="5">
+      </p>
+    </fieldset>
+    <input type="submit" value="Submit" />
+    <input type="reset" value="Reset" />
+  </form>
+</body>
+
+</html>

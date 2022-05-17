@@ -1,0 +1,3 @@
+<?php
+
+checkOddEven(9);

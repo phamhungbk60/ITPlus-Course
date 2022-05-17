@@ -1,0 +1,110 @@
+html, body {
+  background-color: #7EC855;
+}
+
+.container {
+  max-width: 750px;
+  margin: 80px auto;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.content {
+  background-color: #fff;
+  font-family: 'Roboto',sans-serif,serif;
+  box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
+  border-radius: 6px;
+}
+
+.title {
+  padding: 20px 30px;
+  border-bottom: 1px solid #E1E8EE;
+  color: #5E6977;
+  font-size: 18px;
+  font-weight: 400;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item {
+  padding: 20px 30px;
+  border-bottom: 1px solid #E1E8EE;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.item:last-child {
+  border-bottom: none;
+}
+
+.description {
+  font-size: 14px;
+}
+
+.description span {
+  font-size: 14px;
+  color: #43484D;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.description span:last-child {
+  font-weight: 300;
+  margin-top: 8px;
+  color: #86939E;
+  margin-bottom: 0;
+}
+
+.quantity {
+  display: flex;
+}
+
+.quantity input {
+  border: none;
+  text-align: center;
+  width: 32px;
+  font-size: 16px;
+  color: #43484D;
+  font-weight: 300;
+  outline: none;
+}
+
+.buttons {
+  display: flex;
+}
+
+.buttons button[name='delete'] {
+  margin-right: 5px;
+}
+
+.delete-selected, .delete-all {
+  padding: 9px 12px;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  font-size: 16px;
+  outline: none;
+  cursor: pointer;
+}
+
+.delete-selected {
+  background-color: #7EC855;
+  display: none;
+}
+
+.delete-all {
+  background-color: red;
+}

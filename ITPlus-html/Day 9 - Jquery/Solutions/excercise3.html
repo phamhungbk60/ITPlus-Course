@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .hide {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <form>
+    <!-- Name -->
+    <div>
+      <label>Name</label>
+      <input type="text" name="name" placeholder="Name"/>
+      <p class="hide hide-name"></p>
+    </div>
+
+    <!-- Email -->
+    <div>
+      <label>Email</label>
+      <input type="email" name="email" placeholder="Email"/>
+      <p class="hide hide-email"></p>
+    </div>
+
+    <!-- Country -->
+    <div>
+      <label>Country</label>
+      <select name="country">
+        <option value="-1">--Please choose a country--</option>
+        <option value="1">Vietnam</option>
+        <option value="2">Japan</option>
+        <option value="3">USA</option>
+      </select>
+      <p class="hide hide-country"></p>
+    </div>
+
+    <!-- Send info -->
+    <button type="submit">Send info</button>
+  </form>
+
+  <!-- Result -->
+  <div id="result">
+
+  </div>
+  <script src="../Materials/jquery-3.5.1.min.js"></script>
+  <script>
+    $(function() {
+      $("form").submit(function(e) {
+        e.preventDefault();
+        
+        let name = $("[name='name']").val();
+        let email = $("[name='email']").val();
+        let selectedCountryValue = $("[name='country']").val();
+        let selectedCountryText = $("[name='country'] option:selected").text();
+
+        let hasError = false;
+
+        //reset form
+        if (!$(".hide-name").hasClass('hide')) {
+          $(".hide-name").addClass('hide');
+        }
+
+        if (!$(".hide-email").hasClass('hide')) {
+          $(".hide-email").addClass('hide');
+        }
+
+        if (!$(".hide-country").hasClass('hide')) {
+          $(".hide-country").addClass('hide');
+        }
+
+        //logic
+        if (name == "") {
+          $(".hide-name").text('Name must not be blank')
+          $(".hide.hide-name").removeClass('hide');
+          $("[name='name']").focus()
+          hasError = true;
+        }
+
+        if (email == "") {
+          $(".hide-email").text('Email must not be blank')
+          $(".hide.hide-email").removeClass('hide');
+          $("[name='email']").focus()
+          hasError = true;
+        }
+
+        if (selectedCountryValue == -1) {
+          $(".hide-country").text('Country must not be blank')
+          $(".hide.hide-country").removeClass('hide');
+          $("[name='country']").focus()
+          hasError = true
+        }
+
+        if (!hasError) {
+          $("#result").html(
+            `<div>Name: ${name}</div>
+            <div>Email: ${email}</div>
+            <div>Country: ${selectedCountryText}</div>`
+          )
+        }
+
+      })
+    });
+  </script>
+</body>
+</html>

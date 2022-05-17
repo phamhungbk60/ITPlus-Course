@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p>Hello world</p>
+
+  <button name="change">Change text</button>
+  <button name="change2">Reuse logic</button>
+  <script src="../Materials/jquery-2.2.4.min.js"></script>
+  <script>
+    $(function() {
+      $("button[name='change']").click(function() {
+        changeText("Goodbye")
+      })
+
+      $("button[name='change2']").click(function() {
+        changeText("Happy new year")
+      })
+    })
+
+    //this is very basic function with param
+    function changeText(desiredText) {
+      $("p").text(desiredText)
+      return true
+      return '1'
+      return $("p").text(desiredText)
+      return {
+        "a": 1,
+        "b": 2
+      }
+    }
+  </script>
+</body>
+</html>

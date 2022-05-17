@@ -1,0 +1,9 @@
+.container-fluid {
+  padding: 0
+}
+
+@media screen and (max-width: 992px) {
+  #sign-in {
+    display: none;
+  }
+}

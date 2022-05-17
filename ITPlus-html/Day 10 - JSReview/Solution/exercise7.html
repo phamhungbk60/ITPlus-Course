@@ -1,0 +1,138 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shopping Cart</title>
+
+  <link rel="stylesheet" href="reset.css" />
+  <link rel="stylesheet" href="exercise7.css" />
+</head>
+
+<body>
+  <div class="shopping-cart">
+    <div class="container">
+      <div class="content">
+        <!-- Title -->
+        <div class="title">
+          <h1>Shopping Bag</h1>
+          <div>
+            <button class="delete-all" type="button">Empty my cart</button>
+            <button class="delete-selected" type="button">Delete selected</button>
+          </div>
+        </div>
+
+        <!-- Product #1 -->
+        <div class="item">
+          <div class="check-item">
+            <input type="checkbox"/>
+          </div>
+
+          <div class="buttons">
+            <button class="btn" type="button" name="delete">
+              <img src="../Materials/images/delete-icn.svg" alt="">
+            </button>
+          </div>
+
+          <div class="image">
+            <img src="../Materials/images/item-1.png" alt="">
+          </div>
+
+          <div class="description">
+            <span>Common Projects</span>
+            <span>Bball High</span>
+            <span>White</span>
+          </div>
+
+          <div class="quantity">
+            <button class="btn" type="button" name="plus">
+              <img src="../Materials/images/plus.svg" alt="">
+            </button>
+            <input type="text" name="qtity" value="1">
+            <button class="btn" type="button" name="minus">
+              <img src="../Materials/images/minus.svg" alt="">
+            </button>
+          </div>
+
+          <div class="total-price" data-baseprice="549">$549</div>
+        </div>
+
+        <!-- Product #2 -->
+        <div class="item">
+          <div class="check-item">
+            <input type="checkbox"/>
+          </div>
+
+          <div class="buttons">
+            <button class="btn" type="button" name="delete">
+              <img src="../Materials/images/delete-icn.svg" alt="">
+            </button>
+          </div>
+
+          <div class="image">
+            <img src="../Materials/images/item-2.png" alt="">
+          </div>
+
+          <div class="description">
+            <span>Maison Margiela</span>
+            <span>Future Sneakers</span>
+            <span>White</span>
+          </div>
+
+          <div class="quantity">
+            <button class="btn" type="button" name="plus">
+              <img src="../Materials/images/plus.svg" alt="">
+            </button>
+            <input type="text" name="qtity" value="1">
+            <button class="btn" type="button" name="minus">
+              <img src="../Materials/images/minus.svg" alt="">
+            </button>
+          </div>
+
+          <div class="total-price" data-baseprice="870">$870</div>
+        </div>
+
+        <!-- Product #3 -->
+        <div class="item">
+
+          <div class="check-item">
+            <input type="checkbox"/>
+          </div>
+
+          <div class="buttons">
+            <button class="btn" type="button" name="delete">
+              <img src="../Materials/images/delete-icn.svg" alt="">
+            </button>
+          </div>
+
+          <div class="image">
+            <img src="../Materials/images/item-3.png" alt="">
+          </div>
+
+          <div class="description">
+            <span>Our Legacy</span>
+            <span>Brushed Scarf</span>
+            <span>Brown</span>
+          </div>
+
+          <div class="quantity">
+            <button class="btn" type="button" name="plus">
+              <img src="../Materials/images/plus.svg" alt="">
+            </button>
+            <input type="text" name="qtity" value="1">
+            <button class="btn" type="button" name="minus">
+              <img src="../Materials/images/minus.svg" alt="">
+            </button>
+          </div>
+
+          <div class="total-price" data-baseprice="349">$349</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-2.2.4.js" charset="utf-8"></script>
+  <script src="./exercise7.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    p {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div id="result">
+    <p id="first_name"></p>
+    <p id="last_name"></p>
+  </div>
+  <script src="../../Materials/jquery-2.2.4.min.js"></script>
+  <script>
+    $(function() {
+      $.ajax({
+        //url: Khi bạn gửi request thì gửi tới đâu
+        url: 'index.php',
+        method: 'GET',
+      }).done(function(result) {
+        //result = []
+        //result
+        // $("#result").html(result)
+        const resultAsJson = JSON.parse(result)
+        $("#first_name").text(resultAsJson.first_name)
+        $("#last_name").text(resultAsJson.last_name)
+      }).fail(function(result) {
+        console.error(result)
+      }); 
+    });
+  </script>
+</body>
+</html>

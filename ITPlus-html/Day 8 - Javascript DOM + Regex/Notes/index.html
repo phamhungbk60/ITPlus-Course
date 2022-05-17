@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- Internal stylesheet -->
+  <style>
+    p span {
+      color: red;
+    }
+
+    .show {
+      display: block !important;
+    }
+  </style>
+</head>
+<body>
+  <h1>My header</h1>
+  <p id="my-paragraph" name="camnh">This is paragraph</p>
+
+  <button class="btn-hide">Hide paragraph</button>
+  <button class="btn-show">Show paragraph</button>
+
+  <button>Nagivate to google.com</button>
+
+  <!-- Có 3 phần: tag =><p>, phần 2: attributes, phần 3: text-->
+
+  <script>
+    // Để làm việc với DOM, thì mình sẽ phải target đúng node mà mình hướng đến.
+    // document.getElementById("my-paragraph").innerText = "<span>Lớp học PHP cơ bản</span>";
+    
+
+    // Get elements by tag name trả về kiểu dữ liệu là gì => array
+    document.getElementsByTagName('button')[0].addEventListener('click', function() {
+      // document.getElementById("my-paragraph").style.display = "none";
+    });
+
+    document.getElementsByTagName('button')[1].addEventListener('click', function() {
+      //cách 1: Display block
+      document.getElementById("my-paragraph").style.display = "block";
+      //cách 2: Bỏ thuộc tính đi
+      // document.getElementById("my-paragraph").removeAttribute('style');
+      //cách 3: Thêm class và thuộc tính !important để ghi đè vào inline style.
+      // document.getElementById("my-paragraph").classList.add('show');
+    });
+
+    //queryselector => selector giống hệt css
+    document.querySelector("button.btn-hide").addEventListener('click', function() {
+      document.getElementById("my-paragraph").style.display = "none";
+    })
+
+    // redirection
+    document.getElementsByTagName('button')[2].addEventListener('click', function() {
+      location.href = 'https://google.com' //ajax
+    });
+
+    //Regex ==> Regular expression \d => Các số \D => không phải số.
+    
+  </script>
+</body>
+</html>

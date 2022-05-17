@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button>Load table</button>
+  <script src="../../Materials/jquery-2.2.4.min.js"></script>
+  <script>
+    $(function() {
+      //khi ấn vào button sẽ tiến hành load data từ file data.php
+      $("button").click(function() {
+          $.ajax({
+          url: 'data.php',
+          method: 'GET',
+          success: function(res) {
+            //Nếu có table tồn tại sẵn thì tiến hành xoá <table> đi
+            const table = $("body").find('table')
+            if (table) {
+              table.remove();
+            }
+            //Lấy html table từ file data.php
+            $("body").append(res)
+          },
+          error: function(err) {
+            //trong trường hợp thất bại sẽ ghi ra cửa sổ console
+            console.error(err)
+          }
+        })
+      })
+    })
+  </script>
+</body>
+</html>
